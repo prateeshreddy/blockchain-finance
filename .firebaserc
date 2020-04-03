@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "blockchain-finance": {
+      "hosting": {
+        "blockchain-finance": [
+          "blockchain-finance"
+        ]
+      }
+    }
+  }
+}
