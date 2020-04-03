@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "blockchain-finance",
+      "public": "dist/blockchain-finance",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}
