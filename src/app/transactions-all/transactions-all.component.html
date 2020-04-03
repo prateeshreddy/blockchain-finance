@@ -1,0 +1,27 @@
+<p class="center">Showing all transactions</p>
+<p class="center">Previous hash won't show for first transaction in chain</p>
+<a routerLink="/dashboard" class="more-button">Go to Dashboard</a>
+<table>
+    <thead>
+        <tr>
+            <th>From Account</th>
+            <th>To Account</th>
+            <th>Amount</th>
+            <th>Date of Transaction</th>
+            <th>Transaction ID</th>
+            <th>Current Hash</th>
+            <th>Previous Hash</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let transaction of transactionsList">
+            <td><b *ngIf="transaction.to === details.account_number; else elsePart1">{{transaction.from}}</b><ng-template #elsePart1>{{transaction.from}}</ng-template></td>
+            <td><b *ngIf="transaction.to === details.account_number; else elsePart2">{{transaction.to}}</b><ng-template #elsePart2>{{transaction.to}}</ng-template></td>
+            <td><b *ngIf="transaction.to === details.account_number; else elsePart3">{{transaction.amount}}</b><ng-template #elsePart3>{{transaction.amount}}</ng-template></td>
+            <td><b *ngIf="transaction.to === details.account_number; else elsePart4">{{transaction.timestamp.toDate()}}</b><ng-template #elsePart4>{{transaction.timestamp.toDate()}}</ng-template></td>
+            <td><b *ngIf="transaction.to === details.account_number; else elsePart5">{{transaction.transactionID}}</b><ng-template #elsePart5>{{transaction.transactionID}}</ng-template></td>
+            <td><b *ngIf="transaction.to === details.account_number; else elsePart6">{{transaction.currentHash}}</b><ng-template #elsePart6>{{transaction.currentHash}}</ng-template></td>
+            <td><b *ngIf="transaction.to === details.account_number; else elsePart7">{{transaction.previousHash}}</b><ng-template #elsePart7>{{transaction.previousHash}}</ng-template></td>
+        </tr>
+    </tbody>
+</table>

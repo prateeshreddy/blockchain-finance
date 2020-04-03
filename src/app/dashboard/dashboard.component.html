@@ -1,0 +1,103 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard | Blockchain Financial Application</h1>
+  <button class="more-button" (click)="logout()">Logout</button>
+  <mat-grid-list cols="2" rowHeight="350px">
+    <mat-grid-tile colspan="1" rowspan="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Current Balance: {{currentBalance}}
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div>Account Number: {{details.account_number}}</div>
+        </mat-card-content>
+        <mat-card-content class="dashboard-card-content">
+          <div>Account Holder Name: {{details.name}}</div>
+        </mat-card-content>
+        <mat-card-content class="dashboard-card-content">
+          <div>Account Opening Date: {{details.date_joined.toDate().toLocaleDateString('en-IN')}}</div>
+        </mat-card-content>
+        <mat-card-content class="dashboard-card-content">
+          <div>Blockchain Status: {{blockChainStatus}}</div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Add Money
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div>
+            <form name="userform" method="post" #formCtrl="ngForm">
+              <mat-form-field appearance = "standard">
+                <mat-label>Add Cash</mat-label>
+                <input matInput placeholder="Enter Amount to add" name="cash_add" type="number" required [(ngModel)]="cash.amount">
+             </mat-form-field>
+             <button mat-raised-button color="accent" (click)="addCash()">Add Money</button>
+            </form>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Transfer Money
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <form name="rform" method="post" #formCtrl="ngForm">
+            <mat-form-field appearance = "standard">
+              <mat-label>Enter Amount</mat-label>
+              <input matInput placeholder="Enter Amount to add" name="amt" type="number" required [(ngModel)]="transact.amount">
+           </mat-form-field>
+             <select name="acc" required [(ngModel)]="transact.to" matInput>
+               <option value="" disabled selected>Select Account to transfer to</option>
+                <option value="{{account.accountNumberUser}}" *ngFor="let account of accountsList">{{account.userName}}</option>
+             </select>
+           <button mat-raised-button color="accent" (click)="sendMoney()">Send Money</button>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            Recent Transactions
+          </mat-card-title>
+          <a class="more-button" routerLink="/transaction">All Transactions</a>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <ul style="list-style: none;">
+            <li>* Bold Indicates transferred to your account</li>
+            <li>* From 11111111 indicates add money transfer</li>
+          </ul>
+          <table>
+            <thead>
+              <tr>
+                <th>From Account Number</th>
+                <th>To Account Number</th>
+                <th>Amount</th>
+                <th>Date and Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let transaction of transactionsList | slice:0:4">
+                <td><b *ngIf="transaction.to === details.account_number; else elsePart1">{{transaction.from}}</b><ng-template #elsePart1>{{transaction.from}}</ng-template></td>
+                <td><b *ngIf="transaction.to === details.account_number; else elsePart2">{{transaction.to}}</b><ng-template #elsePart2>{{transaction.to}}</ng-template></td>
+                <td><b *ngIf="transaction.to === details.account_number; else elsePart3">{{transaction.amount}}</b><ng-template #elsePart3>{{transaction.amount}}</ng-template></td>
+                <td><b *ngIf="transaction.to === details.account_number; else elsePart4">{{transaction.timestamp.toDate()}}</b><ng-template #elsePart4>{{transaction.timestamp.toDate()}}</ng-template></td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

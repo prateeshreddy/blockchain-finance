@@ -1,0 +1,33 @@
+<mat-toolbar color="accent">
+    <mat-toolbar-row>
+        <span>BlockChain Financial Bank</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-card>
+    <mat-card-title>Login</mat-card-title>
+<mat-card-content>
+<form name="userform" method="post" #formCtrl="ngForm">
+  <p>
+    <mat-form-field>
+      <input type="email" matInput placeholder="Email" name="email" [(ngModel)]="user.email">
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input type="password" matInput placeholder="Password" name="password" [(ngModel)]="user.password">
+    </mat-form-field>
+  </p>
+
+  <p *ngIf="errorStatus" class="error">
+    {{ error }}
+  </p>
+
+  <div class="button">
+    <button type="submit" mat-button (click)="signInWithEmail()"
+    [disabled]="formCtrl.form.invalid">Login</button>
+  </div>
+
+</form>
+</mat-card-content>
+</mat-card>
