@@ -2,6 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
+It is inspired by and a practical implementation of the paper [Research of a Possibility of Using Blockchain Technology without Tokens to Protect Banking Transactions](https://ieeexplore.ieee.org/document/8657279)
 
 ## Development & Running
 
@@ -29,8 +30,9 @@ If an attacker tries to interupt these transactions our dashboard gives pop-up s
 
 
 
+## Citation
 
-
+N. A. Popova and N. G. Butakova, [Research of a Possibility of Using Blockchain Technology without Tokens to Protect Banking Transactions](https://ieeexplore.ieee.org/document/8657279) 2019 IEEE Conference of Russian Young Researchers in Electrical and Electronic Engineering (EIConRus), St.Petersburg and Moscow, Russia, 2019, pp. 1764-1768.
 
 
 
