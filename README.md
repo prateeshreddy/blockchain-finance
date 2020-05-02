@@ -30,7 +30,7 @@ From Account, To Account,	Amount,	Date of Transaction, Transaction ID, Current H
 
 This Project is unique as it is uses blockchain to authenticate transactions by checking if prev hash is equal to current hash.
 
-If an attacker tries to interupt these transactions our dashboard gives pop-up showing Blockchain tampered.
+If any hacker tries to interupt these transactions our dashboard gives pop-up showing Blockchain tampered.
 
 <img src="src/app/dashboard/image.PNG" width = "800">
 
