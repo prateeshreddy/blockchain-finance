@@ -25,6 +25,8 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 User Login [Dashboard](https://blockchain-finance.firebaseapp.com/login) to add money or transfer money to other users.
 
+Comment or [Message me](https://www.linkedin.com/in/prateeshreddy) to get Login Credentials for the dashboard if u want to play around. 
+
 Also Database showing all transactions with columns 
 From Account, To Account,	Amount,	Date of Transaction, Transaction ID, Current Hash and Previous Hash. 
 
