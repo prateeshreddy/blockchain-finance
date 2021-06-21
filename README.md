@@ -1,5 +1,7 @@
 # blockchain-finance
 
+This project is Capstone project for my final year Bachelor's degree in Computer Science at Gandhi Institute of Technology and Management, India
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
 It is inspired by and a practical implementation of the paper [Research of a Possibility of Using Blockchain Technology without Tokens to Protect Banking Transactions](https://ieeexplore.ieee.org/document/8657279)
